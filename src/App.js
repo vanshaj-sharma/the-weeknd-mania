@@ -10,6 +10,7 @@ import About from "./pages/about";
 import Approach from "./pages/approach";
 import Services from "./pages/services";
 import { Route } from "react-router-dom";
+import Navigation from "./components/navigation";
 
 const routes = [
   { path: "/", name: "Home", Component: <Home /> },
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <Header />
+      <Navigation />
       <div className="App">
         {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
