@@ -55,7 +55,6 @@ const Home = () => {
   return (
     <>
       {animationComplete === false ? <IntroOverlay /> : ""}
-
       <Banner />
       <Albums />
     </>
