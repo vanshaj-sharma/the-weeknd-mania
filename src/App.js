@@ -1,14 +1,12 @@
 import "./styles/App.scss";
 import Header from "./components/header";
-import Banner from "./components/banner";
-import Albums from "./components/albums";
+import Home from "./pages/home";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Banner />
-      <Albums />
+      <Home />
     </div>
   );
 }
