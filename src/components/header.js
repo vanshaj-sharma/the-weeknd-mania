@@ -4,12 +4,15 @@ import { NavLink, withRouter } from "react-router-dom";
 import { closeMenu, openMenu } from "../animations/animations";
 import { ReactComponent as UpArrow } from "../assets/up-arrow-circle.svg";
 
-const Header = ({ dimensions }) => {
+const Header = ({ history, dimensions }) => {
   const [menuState, setMenuState] = useState({
     menuOpened: false,
   });
 
   useEffect(() => {
+    history.listen(() => {
+      setMenuState({ menuOpened: false });
+    });
     if (menuState.menuOpened === true) {
       // open hamburger
       openMenu(dimensions.width);
@@ -47,4 +50,4 @@ const Header = ({ dimensions }) => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
