@@ -1,6 +1,6 @@
 import "./styles/App.scss";
 import Header from "./components/header";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap/all";
 
 //importing pages =>
@@ -20,17 +20,47 @@ const routes = [
   { path: "/services", name: "Services", Component: <Services /> },
 ];
 
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setInterval(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
 function App() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
   useEffect(() => {
     //preventing flasing
     gsap.to("body", 0, { css: { visibility: "visible" } });
     //set scss varable
-    let vh = window.innerHeight * 0.01;
+    let vh = dimensions.height * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    //fix location
+    const debounceHandleRize = debounce(function handleRize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 1000);
+
+    window.addEventListener("resize", debounceHandleRize);
+
+    return () => {
+      window.removeEventListener("resize", debounceHandleRize);
+    };
   });
   return (
     <>
-      <Header />
+      <Header dimensions={dimensions} />
       <Navigation />
       <div className="App">
         {routes.map(({ path, Component }) => (

@@ -1,7 +1,7 @@
 import { ReactComponent as PrevBtn } from "../assets/arrow-left.svg";
 import { ReactComponent as NextBtn } from "../assets/arrow-right.svg";
 
-import afterHours from "../assets/AfterHours.jpg";
+import afterHours from "../assets/afterhours2.png";
 import startboy from "../assets/Starboy.png";
 import BBTM from "../assets/bbtm.jpg";
 
