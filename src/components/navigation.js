@@ -1,4 +1,48 @@
 import { NavLink } from "react-router-dom";
+import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
+
+//links to Social Media
+const socialLinks = [
+  {
+    id: 1,
+    linkTo: "Facebook",
+    zheLink: "https://www.facebook.com/theweeknd",
+  },
+  {
+    id: 2,
+    linkTo: "Instagram",
+    zheLink: "https://www.instagram.com/theweeknd/",
+  },
+  {
+    id: 3,
+    linkTo: "Twitter",
+    zheLink: "https://twitter.com/TheWeeknd",
+  },
+];
+
+//links to listening platforms
+const musicLinks = [
+  {
+    id: 1,
+    linkTo: "SoundCloud",
+    zheLink: "https://soundcloud.com/theweeknd",
+  },
+  {
+    id: 2,
+    linkTo: "Apple Music",
+    zheLink: "https://music.apple.com/us/artist/the-weeknd/479756766",
+  },
+  {
+    id: 3,
+    linkTo: "Spotify",
+    zheLink: "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ",
+  },
+  {
+    id: 4,
+    linkTo: "Youtube",
+    zheLink: "https://www.youtube.com/user/TheWeekndVEVO",
+  },
+];
 
 const Navigation = () => {
   return (
@@ -9,44 +53,44 @@ const Navigation = () => {
             <div className="nav-label">Menu</div>
             <ul className="nav-links">
               <li>
-                <NavLink to="/case-studies">Case Studies</NavLink>
+                <a href="https://www.theweeknd.com/">Official Site</a>
               </li>
               <li>
-                <NavLink to="/approach">Approach</NavLink>
+                <NavLink exact to="/about">
+                  About
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/service">Services</NavLink>
+                <a href="https://www.theweeknd.com/news">News</a>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <a href="https://www.theweeknd.com/tour">Tour</a>
               </li>
             </ul>
           </div>
           <div className="nav-column">
-            <div className="nav-label">Contact</div>
+            <div className="nav-label">Explore </div>
             <div className="nav-infos">
               <ul className="nav-info">
-                <li className="nav-info-label">Email</li>
-                <li>
-                  <NavLink to="/contact">Get in touch with us</NavLink>
+                <li className="nav-info-label">
+                  Hear <RightArrow />
                 </li>
-                <li>
-                  <NavLink to="/audit">Get a free audit</NavLink>
+                {musicLinks.map((music) => (
+                  <li key={music.id}>
+                    <a href={music.zheLink}>{music.linkTo}</a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="nav-info">
+                <li className="nav-info-label">
+                  Follow <RightArrow />
                 </li>
-              </ul>
-              <ul className="nav-info">
-                <li className="nav-info-label">Headquaters</li>
-                <li>Route du Jura 49</li>
-                <li>1700 Fribourg</li>
-                <li>Swizerland</li>
-              </ul>
-              <ul className="nav-info">
-                <li className="nav-info-label">Phone</li>
-                <li>+41 (0) 75 510 28 60</li>
-              </ul>
-              <ul className="nav-info">
-                <li className="nav-info-label">Legal</li>
-                <li>Privay and Cookies</li>
+
+                {socialLinks.map((social) => (
+                  <li key={social.id}>
+                    <a href={social.zheLink}>{social.linkTo}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

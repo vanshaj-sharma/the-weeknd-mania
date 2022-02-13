@@ -92,14 +92,30 @@ nav {
         .nav-info {
           padding: 0;
           width: 50%;
-          &:nth-child(2),
-          :nth-child(3) {
-            @include media("<=654px") {
-              display: none;
-            }
-          }
           .nav-info-label {
+            font-size: 1.8rem;
             font-weight: 600;
+            @include media("<=tablet") {
+              font-size: 1.4rem;
+            }
+            @include media("<=phone") {
+              font-size: 1.2rem;
+            }
+            svg {
+              border: 1px 2px solid $black;
+              height: 20px;
+              width: 20px;
+              border-radius: 100px;
+              transition: 0.4s ease-in-out;
+              @include media("<=tablet") {
+                width: 16px;
+                height: 16px;
+              }
+              @include media("<=phone") {
+                width: 12px;
+                height: 12px;
+              }
+            }
           }
           li {
             font-weight: 300;

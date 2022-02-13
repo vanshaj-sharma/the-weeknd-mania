@@ -6,15 +6,15 @@ const Banner = () => {
         <div className="row">
           <h2>
             <div className="line">
-              <span>A website made by a Weekndist</span>
+              <span>A made by a Weekndist</span>
             </div>
             <div className="line">
               <span>XO for life.</span>
             </div>
           </h2>
           <div className="btn-row">
-            <a href="/">
-              Merch Store <RightArrow />
+            <a href="https://shop.theweeknd.com/?utm_campaign=nav&utm_medium=referral&utm_source=theweeknd.com">
+              To Merch Store <RightArrow />
             </a>
           </div>
         </div>
