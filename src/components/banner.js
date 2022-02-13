@@ -6,10 +6,10 @@ const Banner = () => {
         <div className="row">
           <h2>
             <div className="line">
-              <span>A made by a Weekndist</span>
+              <span>Made by a Weekndist</span>
             </div>
             <div className="line">
-              <span>XO for life.</span>
+              <span>XO🤍 for life.</span>
             </div>
           </h2>
           <div className="btn-row">

@@ -47,12 +47,18 @@ const Albums = () => {
         <div className="row">
           {albumPieces.map((album) => (
             <div className="album" key={album.id}>
-              <div className="album-details">
-                <h2>{album.year}</h2>
-              </div>
-              <div className="album-image">
-                <img src={album.img} alt={album.title} />
-              </div>
+              <a
+                href={album.spotifyLink}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <div className="album-details">
+                  <h2>{album.year}</h2>
+                </div>
+                <div className="album-image">
+                  <img src={album.img} alt={album.title} />
+                </div>
+              </a>
             </div>
           ))}
         </div>

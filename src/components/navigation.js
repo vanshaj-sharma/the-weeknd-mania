@@ -53,7 +53,13 @@ const Navigation = () => {
             <div className="nav-label">Menu</div>
             <ul className="nav-links">
               <li>
-                <a href="https://www.theweeknd.com/">Official Site</a>
+                <a
+                  href="https://www.theweeknd.com/ "
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Official Site
+                </a>
               </li>
               <li>
                 <NavLink exact to="/about">
@@ -61,10 +67,22 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li>
-                <a href="https://www.theweeknd.com/news">News</a>
+                <a
+                  href="https://www.theweeknd.com/news"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  News
+                </a>
               </li>
               <li>
-                <a href="https://www.theweeknd.com/tour">Tour</a>
+                <a
+                  href="https://www.theweeknd.com/tour"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Tour
+                </a>
               </li>
             </ul>
           </div>
@@ -77,7 +95,13 @@ const Navigation = () => {
                 </li>
                 {musicLinks.map((music) => (
                   <li key={music.id}>
-                    <a href={music.zheLink}>{music.linkTo}</a>
+                    <a
+                      href={music.zheLink}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {music.linkTo}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -88,7 +112,13 @@ const Navigation = () => {
 
                 {socialLinks.map((social) => (
                   <li key={social.id}>
-                    <a href={social.zheLink}>{social.linkTo}</a>
+                    <a
+                      href={social.zheLink}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {social.linkTo}
+                    </a>
                   </li>
                 ))}
               </ul>
